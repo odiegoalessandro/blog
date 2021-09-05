@@ -1,5 +1,5 @@
 ---
-title: 'Primeiro post, se inscreve no canal'
+title: 'Primeiro post, se inscreve no canal la no youtube.com'
 date: '2020-03-16'
 tags: ['javascript', 'css', 'html']
 ---
