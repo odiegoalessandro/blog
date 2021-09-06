@@ -1,4 +1,4 @@
-import { Box, Heading, Text, HStack, Center, Button } from "@chakra-ui/react"
+import { Box, Heading, Text, HStack, Center, Button, useColorModeValue, Link } from "@chakra-ui/react"
 import Nextjs from "../images/NextJs"
 import Typescript from "../images/Typescript"
 import Vercel from "../images/Vercel"
@@ -13,8 +13,8 @@ export default function Main(){
   }
 
   return (
-    <Box>
-      <Heading fontSize="4xl">
+    <Box h="100vh">
+      <Heading fontSize="4xl" marginTop="7rem">
         Oi!
       </Heading>
       <Heading fontSize="6xl">
@@ -24,15 +24,40 @@ export default function Main(){
         color="#FF0080"
         _after={{
           content: "'.'",
-          color: "white"
+          color: useColorModeValue('black', 'white')
         }}
       >
         Diego
       </Heading>
       <Text>
         Eu aprendo rápido e sou estudante de informática.
-        Atualmente sou muito interessado em desenvolvimento front-end.
-        Me procurem para podermos conversar sobre vagas front-end!
+        Atualmente sou muito interessado em desenvolvimento front-end. {" "}
+        <Link
+          href="/about"
+          fontWeight="bold"
+          color="#FF0080"
+          pos="relative"
+          transition=".3s"
+          _hover={{
+            _after: {
+              w: "100%",
+            }
+          }}
+          _after={{
+            content: "''",
+            height: "2px",
+            bgColor: "#FF0080",
+            position: "absolute",
+            left: "0",
+            bottom: "-3px",
+            transition: ".3s",
+            w: "0"
+          }}
+        >
+          Me procurem
+        </Link> 
+        {" "}
+        para podermos conversar sobre vagas front-end!
       </Text>
       <Heading marginTop="3rem" fontSize="3xl">
         Minhas tecnologias favoritas atuais

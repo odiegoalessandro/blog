@@ -10,7 +10,6 @@ export default function Home({ posts }) {
     <Center>
       <Flex
         flexDir="column"
-        marginTop="7rem"
         w="45rem"
         align="center"
       >
