@@ -22,8 +22,22 @@ export default function Menu(){
         <Link
           href="/"
           transition=".3s"
+          pos="relative"
           _hover={{
-            color: "#ff0080"
+            color: "#ff0080",
+            _after: {
+              w: "100%",
+            }
+          }}
+          _after={{
+            content: "''",
+            height: "2px",
+            bgColor: "#FF0080",
+            position: "absolute",
+            left: "0",
+            bottom: "-3px",
+            transition: ".3s",
+            w: "0"
           }}
         >
           Diego alessandro
