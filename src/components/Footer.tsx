@@ -8,7 +8,7 @@ export default function Footer(){
       <Flex
         flexDir="column"
         w="45rem"
-        h="10rem"
+        h="8rem"
         align="center"
       >
         <Divider borderBottom="2px" />
