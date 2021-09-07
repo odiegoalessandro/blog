@@ -44,7 +44,8 @@ export default function About(){
         </Heading>
         <Text as="p" marginTop="1rem" marginBottom="4rem">
           Entre em contanto comigo se precisar de uma opinião em algum projeto ou coisa parecida especialmente
-          em projetos front-end ou open-source. Fico feliz em ajudar! (encontre meu email no rodapé)  
+          em projetos front-end ou open-source. Fico feliz em ajudar! Entre em contaoto por esse email {" "}
+          <span style={{color: "#ff0080"}}>diegoalessandrodacruzmartins@gmail.com</span>
         </Text>
       </Flex>
     </Center>

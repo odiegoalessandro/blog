@@ -41,7 +41,7 @@ export default function Footer(){
               <FontAwesomeIcon icon={faLinkedin} />
             </Link>
             <Link 
-              href="#"
+              href="https://twitter.com/odiegoalessandr"
               fontSize="25px"
               transition=".3s"
               _hover={{
