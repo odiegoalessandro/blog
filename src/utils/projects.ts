@@ -24,3 +24,30 @@ export async function getProjectBySlug(slug: string){
     content: convertedContent.toString()
   }
 }
+
+export function getLatestProjects(){
+  const filenames = fs.readdirSync(directory)
+  let latest_filenames
+  
+  if(filenames.length > 2){
+    latest_filenames = filenames.slice(filenames.length - 2)
+  }
+  if(filenames.length === 1){
+    latest_filenames = filenames.slice(filenames.length - 1)  
+  }
+
+  const latest_projects = latest_filenames.map(filename => {
+    const projectPath = path.join(directory, filename)
+    const slug = filename.replace('.md', '')
+    const project = fs.readFileSync(projectPath)
+    const { data } = grayMatter(project)
+
+    return {
+      title: data.title,
+      excerpt: data.excerpt,
+      slug
+    }
+  })
+
+  return latest_projects
+}

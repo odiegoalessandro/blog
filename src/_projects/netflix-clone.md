@@ -1,5 +1,6 @@
 ---
-title: "Clone da pagina inicial da Netflix"
+title: "Clone da Netflix"
+excerpt: "Clone da pagina inicial da Netflix usando a API do TMDb"
 ---
 
 ## Explição
