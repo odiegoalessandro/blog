@@ -3,13 +3,16 @@ import theme from "../themes/theme"
 import GlobalStyles from '../styles/GlobalStyles'
 import Menu from "../components/Menu"
 import Footer from "../components/Footer"
+import LoadText from "../animations/LoadText"
 
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
       <GlobalStyles />
       <Menu />
-      <Component {...pageProps} />
+      <LoadText>
+        <Component {...pageProps} />
+      </LoadText>
       <Footer />
     </ChakraProvider>
   )

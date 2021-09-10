@@ -5,8 +5,6 @@ import Main from '../components/Main'
 import { getLatestProjects } from '../utils/projects'
 
 export default function Home({ projects }) {
-  console.log(projects)
-
   return (
     <Center>
       <Flex
