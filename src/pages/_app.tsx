@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
       <LoadText>
         <Component {...pageProps} />
       </LoadText>
-      <Footer />
+      <Footer />   
     </ChakraProvider>
   )
 }

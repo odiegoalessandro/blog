@@ -5,14 +5,19 @@ import Vercel from "../images/Vercel"
 import NodeJs from "../images/NodeJs"
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Card from "./Card"
-import LoadText from "../animations/LoadText"
+import useInView from "react-cool-inview"
+import dynamic from 'next/dynamic'
+const Cards = dynamic(() =>  import("./Cards"))
 
 export default function Main({ cardContent }){
   function handlePageDown(event){
     const element = event.target
     element.scrollIntoView()
   }
+
+  const { observe, inView } = useInView({
+    unobserveOnEnter: true,
+  })
 
   return (
     <Box>
@@ -86,16 +91,16 @@ export default function Main({ cardContent }){
           <FontAwesomeIcon icon={faArrowDown} />
         </Button>
       </Center>
-      <Heading marginTop="5rem">
-        Projetos em destaque
-      </Heading>
-      <VStack spacing="1rem" p="1.5rem 0">
-        {
-          cardContent.map((content, index) => {
-            return <Card content={content} key={index} />
-          })
-        }
-      </VStack>
+      <div ref={observe}>
+        { inView && (
+          <>
+            <Heading marginTop="8rem">
+              Projetos em destaque
+            </Heading>
+            <Cards cards={cardContent} />
+          </>
+        ) }
+      </div>
     </Box>
   )
 }

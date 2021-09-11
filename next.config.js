@@ -1,11 +1,6 @@
 module.exports = {
   reactStrictMode: true,
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg2$/,
-      use: ["@svgr/webpack"]
-    })
-
-    return config
-  }
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 }

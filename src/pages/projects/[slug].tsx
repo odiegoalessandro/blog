@@ -8,7 +8,7 @@ export default function Slug({data}){
   return(
     <Center>
       <Box 
-        marginTop="8rem"
+        marginTop="10rem"
         w="45rem"
         marginBottom="4rem"
       >

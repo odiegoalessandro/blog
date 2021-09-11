@@ -1,7 +1,7 @@
 import { Flex, Heading, Text, Spacer, Link } from '@chakra-ui/react'
-import react from 'react'
+import React from 'react'
 
-export default function Card({ content }){
+function Card({ content }){
   return (
     <Link
       href={`/projects/${content.slug}`}
@@ -31,3 +31,5 @@ export default function Card({ content }){
     </Link>
   )
 }
+
+export default React.memo(Card)
