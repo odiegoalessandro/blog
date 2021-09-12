@@ -25,6 +25,24 @@ export async function getProjectBySlug(slug: string){
   }
 }
 
+export function  getAllProjects(){
+  const filenames = fs.readdirSync(directory)
+  const projects = filenames.map(filename => {
+    const projectPath = path.join(directory, filename)
+    const slug = filename.replace('.md', '')
+    const project = fs.readFileSync(projectPath)
+    const { data } = grayMatter(project)
+
+    return {
+      title: data.title,
+      excerpt: data.excerpt,
+      slug
+    }
+  })
+
+  return projects
+}
+
 export function getLatestProjects(){
   const filenames = fs.readdirSync(directory)
   let latest_filenames
