@@ -1,4 +1,5 @@
 import { ColorModeScript, extendTheme, ThemeConfig } from '@chakra-ui/react'
+import { BaseBreakpointConfig, createBreakpoints } from '@chakra-ui/theme-tools'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 const config: ThemeConfig = {
@@ -6,7 +7,14 @@ const config: ThemeConfig = {
   useSystemColorMode: false
 }
 
-const theme = extendTheme({config})
+const breakpoints: BaseBreakpointConfig = createBreakpoints({
+  sm: "320px",
+  md: "768px",
+  lg: "960px",
+  xl: "1200px",
+})
+
+const theme = extendTheme({config, breakpoints})
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {

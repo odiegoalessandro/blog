@@ -10,6 +10,7 @@ export default function Footer(){
         w="45rem"
         h="8rem"
         align="center"
+        marginTop="3rem"
       >
         <Divider borderBottom="2px" />
         <Box p="2rem">

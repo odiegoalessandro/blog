@@ -10,7 +10,8 @@ function Card({ content }){
     >
       <Flex
         w="100%"
-        h="6rem"
+        minH="6rem"
+        h="auto"
         flexDir="column"
         borderRadius="md"
         p="4"
@@ -24,7 +25,7 @@ function Card({ content }){
           {content.title}
         </Heading>
         <Spacer />
-        <Text fontSize="sm" opacity=".9">
+        <Text w="full" fontSize="sm" opacity=".9">
           {content.excerpt}
         </Text>
       </Flex>

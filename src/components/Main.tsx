@@ -24,7 +24,15 @@ export default function Main({ cardContent }){
       <Heading fontSize="4xl" marginTop="10rem">
         Oi!
       </Heading>
-      <Heading fontSize="6xl">
+      <Heading 
+        fontSize={{
+          base: "3xl",
+          xl: "6xl",
+          lg: "4xl",
+          md: "4xl",
+          sm: "4xl"
+        }}
+      >
         Pode me chamar de
       </Heading>
       <Heading 
@@ -66,7 +74,15 @@ export default function Main({ cardContent }){
         {" "}
         para podermos conversar sobre vagas front-end!
       </Text>
-      <Heading marginTop="3rem" fontSize="3xl">
+      <Heading 
+        marginTop="3rem"
+        fontSize={{
+          xl: "3xl",
+          lg: "3xl",
+          md: "3xl", sm:
+          "xl"
+        }}
+      >
         Minhas tecnologias favoritas atuais
       </Heading>
       <HStack marginTop="1rem" spacing="1rem">
@@ -87,6 +103,7 @@ export default function Main({ cardContent }){
             color: "#FF0080"
           }}
           onClick={handlePageDown}
+          display={{sm: "none", base: "none"}}
         >
           <FontAwesomeIcon icon={faArrowDown} />
         </Button>
@@ -94,7 +111,7 @@ export default function Main({ cardContent }){
       <div ref={observe}>
         { inView && (
           <>
-            <Heading marginTop="8rem">
+            <Heading marginTop="8rem" fontSize={{xl: "3xl", lg: "3xl", md: "3xl", sm: "xl"}}>
               Projetos em destaque
             </Heading>
             <Cards cards={cardContent} />

@@ -1,22 +1,41 @@
-import { Center, Flex, Heading, VStack, Text } from "@chakra-ui/react"
+import { Center, Box, Heading, VStack, Text } from "@chakra-ui/react"
+import Tooltip from "../components/Tooltip"
 
 export default function About(){
   
   return (
-    <Center>
-      <Flex
-        minH="100vh"
-        w="45rem"
-        flexDir="column"
-      >
+    <Center 
+      flexDir="column"
+      px={{
+        base: "2rem",
+        sm: "5rem",
+        md: "10rem",
+        lg: "15rem",
+        xl: "20rem"
+      }}
+    >
+      <Box>
+
         <Heading
           marginTop="8rem"
-          fontSize="5xl"
+          fontSize={{
+            xl: "5xl", 
+            lg: "5xl", 
+            md: "5xl", 
+            sm: "5xl", 
+            base: "3xl"
+          }}
         >
           Sobre
         </Heading>
         <Heading 
-          fontSize="5xl"
+          fontSize={{
+            xl: "5xl", 
+            lg: "5xl", 
+            md: "5xl", 
+            sm: "5xl", 
+            base: "3xl"
+          }}
           color="#ff0080"
         >
           Diego Alessandro
@@ -39,15 +58,27 @@ export default function About(){
             possamos evoluir juntos!
           </Text>
         </VStack>
-        <Heading as="h2" marginTop="4rem">
+        <Heading
+          as="h2"
+          marginTop="4rem"
+          fontSize={{
+            xl: "3xl", 
+            lg: "3xl", 
+            md: "3xl", 
+            sm: "3xl", 
+            base: "2xl"
+          }}
+        >
           Contato
         </Heading>
         <Text as="p" marginTop="1rem" marginBottom="4rem">
           Entre em contanto comigo se precisar de uma opinião em algum projeto ou coisa parecida especialmente
-          em projetos front-end ou open-source. Fico feliz em ajudar! Entre em contaoto por esse email {" "}
-          <span style={{color: "#ff0080"}}>diegoalessandrodacruzmartins@gmail.com</span>
+          em projetos front-end ou open-source. Fico feliz em ajudar! Entre em contaoto por esse {" "}
+          <Tooltip label="diegoalessandrodacruzmartins@gmail.com">
+            <b>email</b>
+          </Tooltip>
         </Text>
-      </Flex>
+      </Box>
     </Center>
   )
 }

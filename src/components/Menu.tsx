@@ -10,7 +10,7 @@ export default function Menu(){
       align="center"
       justify="space-between"
       h="5rem"
-      px="20rem"
+      px={{base: "2rem", sm: "5rem", md: "10rem", lg: "15rem", xl: "20rem"}}
       bgColor={useColorModeValue("gray.300", "gray.700")}
       pos="fixed"
       zIndex="10"

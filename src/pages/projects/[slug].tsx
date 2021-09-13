@@ -6,14 +6,26 @@ import Content from '../../styles/Content'
 
 export default function Slug({data}){
   return(
-    <Center>
-      <Box 
-        marginTop="10rem"
-        w="45rem"
-        marginBottom="4rem"
-      >
+    <Center
+      flexDir="column"
+      marginTop="10rem"
+      px={{
+        base: "2rem",
+        sm: "5rem",
+        md: "10rem",
+        lg: "15rem",
+        xl: "20rem"
+      }}
+    >
+      <Box>
         <Heading 
-          fontSize="5xl"
+          fontSize={{
+            base: "4xl",
+            xl: "5xl",
+            lg: "5xl",
+            md: "5xl",
+            sm: "4xl"
+          }}
           marginBottom="4rem"
           textTransform="capitalize"
         >
