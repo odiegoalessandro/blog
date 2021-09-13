@@ -1,4 +1,4 @@
-import { Box, Heading, Text, HStack, Center, Button, useColorModeValue, Link, VStack } from "@chakra-ui/react"
+import { Box, Heading, Text, HStack, Center, Button, useColorModeValue, Link } from "@chakra-ui/react"
 import Nextjs from "../images/NextJs"
 import Typescript from "../images/Typescript"
 import Vercel from "../images/Vercel"
@@ -115,6 +115,13 @@ export default function Main({ cardContent }){
               Projetos em destaque
             </Heading>
             <Cards cards={cardContent} />
+            <Center>
+              <Link _hover={{}} href="/projects">
+                <Button>
+                  Ver mais
+                </Button>
+              </Link>
+            </Center>
           </>
         ) }
       </div>
