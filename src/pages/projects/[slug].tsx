@@ -3,37 +3,43 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { getAllSlugs, getProjectBySlug } from '../../utils/projects'
 import { Box, Center, Heading } from '@chakra-ui/react'
 import Content from '../../styles/Content'
+import Head from 'next/head'
 
 export default function Slug({data}){
   return(
-    <Center
-      flexDir="column"
-      marginTop="10rem"
-      px={{
-        base: "2rem",
-        sm: "5rem",
-        md: "10rem",
-        lg: "15rem",
-        xl: "20rem"
-      }}
-    >
-      <Box>
-        <Heading 
-          fontSize={{
-            base: "4xl",
-            xl: "5xl",
-            lg: "5xl",
-            md: "5xl",
-            sm: "4xl"
-          }}
-          marginBottom="4rem"
-          textTransform="capitalize"
-        >
-          {data.metadata.title}
-        </Heading>
-        <Content dangerouslySetInnerHTML={{__html: data.content}} />
-      </Box>
-    </Center>
+    <>
+      <Head>
+        <title>{data.metadata.title}</title>
+      </Head>
+      <Center
+        flexDir="column"
+        marginTop="10rem"
+        px={{
+          base: "2rem",
+          sm: "5rem",
+          md: "10rem",
+          lg: "15rem",
+          xl: "20rem"
+        }}
+      >
+        <Box>
+          <Heading 
+            fontSize={{
+              base: "4xl",
+              xl: "5xl",
+              lg: "5xl",
+              md: "5xl",
+              sm: "4xl"
+            }}
+            marginBottom="4rem"
+            textTransform="capitalize"
+          >
+            {data.metadata.title}
+          </Heading>
+          <Content dangerouslySetInnerHTML={{__html: data.content}} />
+        </Box>
+      </Center>
+    </>
   )
 }
 
