@@ -103,7 +103,7 @@ export default function Main({ cardContent }){
             color: "#FF0080"
           }}
           onClick={handlePageDown}
-          display={{sm: "none", base: "none"}}
+          display={{xl: "flex", lg: "flex", md: "none", sm: "none", base: "none"}}
         >
           <FontAwesomeIcon icon={faArrowDown} />
         </Button>
