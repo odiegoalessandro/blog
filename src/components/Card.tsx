@@ -8,6 +8,7 @@ function Card({ content }){
       w="100%"
       _hover={{}}
       role="link"
+      border="1px solid currentcolor"
     >
       <Flex
         w="full"
@@ -16,7 +17,6 @@ function Card({ content }){
         flexDir="column"
         borderRadius="md"
         p="4"
-        borderColor="1px solid currentcolor"
         transition=".2s"
         role="group"
       >
