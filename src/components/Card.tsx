@@ -7,6 +7,7 @@ function Card({ content }){
       href={`/projects/${content.slug}`}
       w="100%"
       _hover={{}}
+      role="link"
     >
       <Flex
         w="100%"
@@ -20,12 +21,13 @@ function Card({ content }){
         _hover={{
           transform: "scale(1.1)"
         }}
+        role="group"
       >
-        <Heading fontSize="2xl">
+        <Heading fontSize="2xl" role="heading">
           {content.title}
         </Heading>
-        <Spacer />
-        <Text w="full" fontSize="sm" opacity=".9">
+        <Spacer role="separator" />
+        <Text w="full" fontSize="sm" opacity=".9" role="textbox">
           {content.excerpt}
         </Text>
       </Flex>

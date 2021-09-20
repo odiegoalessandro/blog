@@ -20,8 +20,8 @@ export default function Main({ cardContent }){
   })
 
   return (
-    <Box>
-      <Heading as="h1" fontSize="4xl" marginTop="10rem">
+    <Box role="main">
+      <Heading as="h1" fontSize="4xl" marginTop="10rem" role="heading">
         Oi!
       </Heading>
       <Heading 
@@ -41,14 +41,16 @@ export default function Main({ cardContent }){
           content: "'.'",
           color: useColorModeValue('black', 'white')
         }}
+        role="heading"
       >
         Diego
       </Heading>
-      <Text>
+      <Text role="textbox">
         Eu aprendo rápido e sou estudante de informática.
         Atualmente sou muito interessado em desenvolvimento front-end. {" "}
         <Link
           href="/about"
+          role="link"
           fontWeight="bold"
           color="#FF0080"
           pos="relative"
@@ -82,17 +84,19 @@ export default function Main({ cardContent }){
           md: "3xl", sm:
           "xl"
         }}
+        role="heading"
       >
         Minhas tecnologias favoritas atuais
       </Heading>
-      <HStack marginTop="1rem" spacing="1rem">
+      <HStack marginTop="1rem" spacing="1rem" role="group">
         <Nextjs />
         <Typescript />
         <Vercel />
         <NodeJs />
       </HStack>
-      <Center>
+      <Center role="group">
         <Button
+          role="button"
           bgColor="transparent"
           borderRadius="50%"
           marginTop="4rem"
@@ -105,19 +109,19 @@ export default function Main({ cardContent }){
           onClick={handlePageDown}
           display={{xl: "flex", lg: "flex", md: "none", sm: "none", base: "none"}}
         >
-          <FontAwesomeIcon icon={faArrowDown} />
+          <FontAwesomeIcon icon={faArrowDown} role="img" />
         </Button>
       </Center>
-      <div ref={observe}>
+      <div ref={observe} role="group">
         { inView && (
           <>
-            <Heading marginTop="8rem" fontSize={{xl: "3xl", lg: "3xl", md: "3xl", sm: "xl"}}>
+            <Heading marginTop="8rem" fontSize={{xl: "3xl", lg: "3xl", md: "3xl", sm: "xl"}} role="heading">
               Projetos em destaque
             </Heading>
             <Cards cards={cardContent} />
-            <Center>
-              <Link _hover={{}} href="/projects">
-                <Button>
+            <Center role="group">
+              <Link _hover={{}} href="/projects" role="link">
+                <Button role="button">
                   Ver mais
                 </Button>
               </Link>

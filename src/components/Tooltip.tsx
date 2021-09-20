@@ -4,6 +4,7 @@ export default function Tooltip({ label, children }){
   return (
     <ChakraTooltip 
       placement="auto"
+      aria-label={label}
       label={label}
       bgColor={useColorModeValue("gray.300", "gray.700")}
       color="currentcolor"
