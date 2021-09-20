@@ -1,4 +1,4 @@
-import { Flex, Heading, Text, Spacer, Link } from '@chakra-ui/react'
+import { Flex, Heading, Text, Spacer, Link, useColorModeValue } from '@chakra-ui/react'
 import React from 'react'
 
 function Card({ content }){
@@ -10,16 +10,16 @@ function Card({ content }){
       role="link"
     >
       <Flex
-        w="100%"
+        w="full"
         minH="6rem"
         h="auto"
         flexDir="column"
         borderRadius="md"
         p="4"
-        border="2px solid currentcolor"
+        bgColor={useColorModeValue("gray.300", "gray.700")}
         transition=".2s"
         _hover={{
-          transform: "scale(1.1)"
+          backgroundColor: useColorModeValue("#E2E8F0", "#4A5568")
         }}
         role="group"
       >
