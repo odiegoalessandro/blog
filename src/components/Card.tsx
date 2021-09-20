@@ -9,6 +9,7 @@ function Card({ content }){
       _hover={{}}
       role="link"
       border="1px solid currentcolor"
+      borderRadius="md"
     >
       <Flex
         w="full"
