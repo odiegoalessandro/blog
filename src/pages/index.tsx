@@ -1,9 +1,34 @@
-import { Center } from '@chakra-ui/react'
+import { Box, Center } from "@chakra-ui/react"
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import React from 'react'
-import Main from '../components/Main'
 import { getLatestProjects } from '../utils/projects'
+import TechStacks from "../components/TechStacks"
+import Welcome from "../components/Welcome"
+import PageDown from "../components/PageDown"
+import Projects from "../components/Projects"
+import { motion, Variants } from 'framer-motion'
+
+const variants: Variants = {
+  hidden: {
+    y: "50px",
+    opacity: 0
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.2,
+      duration: .7,
+      staggerChildren: .4
+    }
+  }
+}
+
+const elementVariants: Variants = {
+  hidden: {opacity: 0},
+  visible: {opacity: 1}
+}
 
 export default function Home({ projects }) {
   return (
@@ -20,7 +45,24 @@ export default function Home({ projects }) {
           xl: "20rem"
         }}
       >
-        <Main cardContent={projects} />
+        <Box>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={variants}
+          >
+            <motion.div variants={elementVariants}>
+              <Welcome />
+            </motion.div>
+            <motion.div variants={elementVariants}>
+              <TechStacks />
+            </motion.div>
+            <motion.div variants={elementVariants}>
+              <PageDown />
+            </motion.div>
+            <Projects projects={projects} />
+          </motion.div>
+        </Box>
       </Center>
     </>
   )
