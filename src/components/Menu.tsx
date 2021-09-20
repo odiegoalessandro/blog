@@ -10,6 +10,7 @@ export default function Menu(){
       align="center"
       justify="space-between"
       h="5rem"
+      role="menu"
       px={{base: "2rem", sm: "5rem", md: "10rem", lg: "15rem", xl: "20rem"}}
       bgColor={useColorModeValue("gray.300", "gray.700")}
       pos="fixed"
@@ -18,8 +19,10 @@ export default function Menu(){
     > 
       <Heading 
         fontSize="1.2rem"
+        role="heading"
       >
         <Link
+          role="link"
           href="/"
           transition=".3s"
           pos="relative"
@@ -43,19 +46,18 @@ export default function Menu(){
           Diego alessandro
         </Link>
       </Heading>
-      <HStack spacing="5">
-        <IconButton
-          aria-label="Theme"
-          bgColor="transparent"
-          borderRadius="50%"
-          onClick={toggleColorMode}
-          w="10"
-          fontSize="large"
-          icon={
-            colorMode === "light" ? (<MoonIcon />) : (<SunIcon />)
-          }
-      />
-      </HStack>
+      <IconButton
+        aria-label="Theme"
+        role="button"
+        bgColor="transparent"
+        borderRadius="50%"
+        onClick={toggleColorMode}
+        w="10"
+        fontSize="large"
+        icon={
+          colorMode === "light" ? (<MoonIcon role="img" />) : (<SunIcon role="img" />)
+        }
+    />
     </Flex>
   )
 }

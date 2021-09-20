@@ -29,6 +29,9 @@ class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
           <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+          <meta name="robots" content="all" />
+          <meta name="description" content="Olá meu nome é Diego e esse é meu site pessoal" />
+          <meta name="theme-color" content="#1A202C" />
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />

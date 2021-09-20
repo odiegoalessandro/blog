@@ -21,7 +21,7 @@ export default function Main({ cardContent }){
 
   return (
     <Box>
-      <Heading fontSize="4xl" marginTop="10rem">
+      <Heading as="h1" fontSize="4xl" marginTop="10rem">
         Oi!
       </Heading>
       <Heading 

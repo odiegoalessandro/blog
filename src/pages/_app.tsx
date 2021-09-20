@@ -10,9 +10,9 @@ function MyApp({ Component, pageProps }) {
     <ChakraProvider theme={theme}>
       <GlobalStyles />
       <Menu />
-        <PageTrasition>
-          <Component {...pageProps} />
-        </PageTrasition>
+      <PageTrasition>
+        <Component {...pageProps} />
+      </PageTrasition>
       <Footer />   
     </ChakraProvider>
   )
