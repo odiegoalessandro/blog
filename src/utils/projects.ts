@@ -45,14 +45,9 @@ export function  getAllProjects(){
 
 export function getLatestProjects(){
   const filenames = fs.readdirSync(directory)
-  let latest_filenames
-  
-  if(filenames.length > 2){
-    latest_filenames = filenames.slice(filenames.length - 2)
-  }
-  if(filenames.length === 1){
-    latest_filenames = filenames.slice(filenames.length - 1)  
-  }
+  let latest_filenames: string[]
+
+  latest_filenames = filenames.slice(filenames.length - 2)
 
   const latest_projects = latest_filenames.map(filename => {
     const projectPath = path.join(directory, filename)
