@@ -10,6 +10,7 @@ export default function Vercel(){
       <Box
         as="svg"
         role="img"
+        aria-label="Icone da vercel"
         stroke="currentColor"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"

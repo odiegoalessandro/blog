@@ -15,11 +15,13 @@ export default function TechStacks(){
           md: "3xl", sm:
           "xl"
         }}
-        role="heading"
       >
         Minhas tecnologias favoritas atuais
       </Heading>
-      <HStack marginTop="1rem" spacing="1rem" role="group">
+      <HStack
+        marginTop="1rem"
+        spacing="1rem"
+      >
         <Nextjs />
         <Typescript />
         <Vercel />

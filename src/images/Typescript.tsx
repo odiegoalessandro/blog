@@ -7,6 +7,7 @@ export default function Typescript(){
       <Box 
         as="svg"
         role="img"
+        aria-label="Icone do typescript"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 400 400"
         width="45px"

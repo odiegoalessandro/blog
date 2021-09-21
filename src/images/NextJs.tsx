@@ -11,6 +11,7 @@ export default function Nextjs(){
       <Box
         as="svg"
         role="img"
+        aria-label="Icone do nextjs"
         height="45px"
         fill="currentColor"
         viewBox=".5 -.2 1023 1024.1"

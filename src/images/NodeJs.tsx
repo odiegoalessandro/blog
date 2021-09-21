@@ -10,6 +10,7 @@ export default function NodeJs(){
       <Box
         as="svg"
         role="img"
+        aria-label="Icone do nodejs"
         stroke="currentColor"
         fill="currentColor"
         strokeWidth="0"
