@@ -34,6 +34,7 @@ const Card: React.FC<CardProps> = ({ content }, rest) => {
       alignItems="left"
       flexDir="column"
       role="article"
+      aria-label="Card de projetos"
       {...rest}
     >
       {

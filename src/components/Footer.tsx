@@ -23,48 +23,54 @@ export default function Footer(){
             spacing="1rem"
             as="ul"
           >
-            <Link 
-              href="https://github.com/odiegoalessandro"
-              fontSize="25px"
-              transition=".3s"
-              _hover={{
-                color: "#ff0080"
-              }}
-              aria-label="Link para meu github"
+            <li>
+              <Link 
+                href="https://github.com/odiegoalessandro"
+                fontSize="25px"
+                transition=".3s"
+                _hover={{
+                  color: "#ff0080"
+                }}
+                aria-label="Link para meu github"
+                >
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  role="img"
+                />
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="https://www.linkedin.com/in/diego-alessandro-da-cruz-martins-87b2541b4/"
+                fontSize="25px"
+                transition=".3s"
+                _hover={{
+                  color: "#ff0080"
+                }}
+                aria-label="Link para meu linkedin"  
               >
-              <FontAwesomeIcon
-                icon={faGithub}
-                role="img"
-              />
-            </Link>
-            <Link 
-              href="https://www.linkedin.com/in/diego-alessandro-da-cruz-martins-87b2541b4/"
-              fontSize="25px"
-              transition=".3s"
-              _hover={{
-                color: "#ff0080"
-              }}
-              aria-label="Link para meu linkedin"  
-            >
-              <FontAwesomeIcon
-                icon={faLinkedin}
-                role="img"
-              />
-            </Link>
-            <Link 
-              href="https://twitter.com/odiegoalessandr"
-              fontSize="25px"
-              transition=".3s"
-              _hover={{
-                color: "#ff0080"
-              }}
-              aria-label="Link para meu twitter"
-            >
-              <FontAwesomeIcon
-                icon={faTwitter}
-                role="img"
-              />
-            </Link>
+                <FontAwesomeIcon
+                  icon={faLinkedin}
+                  role="img"
+                />
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="https://twitter.com/odiegoalessandr"
+                fontSize="25px"
+                transition=".3s"
+                _hover={{
+                  color: "#ff0080"
+                }}
+                aria-label="Link para meu twitter"
+              >
+                <FontAwesomeIcon
+                  icon={faTwitter}
+                  role="img"
+                />
+              </Link>
+            </li>
           </HStack>
         </Box>
       </Flex>
