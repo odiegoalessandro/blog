@@ -85,6 +85,7 @@ const Slug: React.FC<SlugProps> = ({ data }) => {
           <Image
             src={`/${data.metadata.image}`}
             marginTop="2rem"
+            alt={data.metadata.title}
           />
           <Content 
             dangerouslySetInnerHTML={{__html: data.content}}
