@@ -27,9 +27,13 @@ export default function PageDown(){
           md: "none",
           sm: "none",
           base: "none"
-        }}   
+        }}
+        aria-label="Botão para rolar a pagina para baixo"   
       >
-        <FontAwesomeIcon icon={faArrowDown}/>
+        <FontAwesomeIcon
+          icon={faArrowDown}
+          role="img"
+        />
       </Button>
     </Center>
   )
