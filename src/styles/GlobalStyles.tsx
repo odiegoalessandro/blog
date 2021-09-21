@@ -23,6 +23,9 @@ const GlobalStyles: React.FC = ({ children }) => {
         ::-webkit-scrollbar{
           display: none;
         }
+        li{
+          list-style: none;
+        }
       `}/>
       {children}
     </>
