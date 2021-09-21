@@ -58,6 +58,7 @@ export function getLatestProjects(){
     return {
       title: data.title,
       excerpt: data.excerpt,
+      image: data.image,
       slug
     }
   })

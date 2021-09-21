@@ -1,7 +1,9 @@
-import { Box, Heading, Center, Button, Link, VStack } from "@chakra-ui/react"
+import { Box, Heading, Center, Button, Link, HStack } from "@chakra-ui/react"
 import useInView from "react-cool-inview"
 import Card from '../components/Card'
 import { motion, Variants } from 'framer-motion'
+import ProjectType from "../types/ProjectType"
+import React from "react"
 
 const variants: Variants = {
   hidden: {
@@ -18,7 +20,11 @@ const variants: Variants = {
   }
 }
 
-export default function Projects({ projects }){
+interface ProjectsProps {
+  projects: ProjectType[]
+}
+
+const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   const { observe, inView } = useInView({
     unobserveOnEnter: true,
     rootMargin: "-60px 0px",
@@ -44,7 +50,25 @@ export default function Projects({ projects }){
           >
             Projetos em destaque
           </Heading>
-          <VStack spacing="1rem" p="1.5rem 0">
+          <HStack
+            marginTop="2rem"
+            justify="space-evenly"
+            align="center"
+            spacing={{
+              base: "0",
+              sm: "0",
+              md:"0",
+              lg: "1rem",
+              xl: "1rem"
+            }}
+            wrap={{
+              base: "wrap",
+              sm: "wrap",
+              md:"wrap",
+              lg: "nowrap",
+              xl: "nowrap"
+            }}
+          >
             {
               projects.map((card, index) => {
                 return (
@@ -52,8 +76,8 @@ export default function Projects({ projects }){
                 )
               })
             }
-          </VStack>
-          <Center>
+          </HStack>
+          <Center marginTop="1rem">
             <Link
               _hover={{}}
               href="/projects"
@@ -68,3 +92,5 @@ export default function Projects({ projects }){
     </Box>
   )
 }
+
+export default Projects

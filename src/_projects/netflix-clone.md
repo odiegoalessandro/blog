@@ -3,6 +3,7 @@ title: "Clone da Netflix"
 excerpt: "Clone da pagina inicial da Netflix usando a API do TMDb"
 author: "Diego Alessandro"
 date: "04-09-2021"
+image: "netflix-clone.jpeg"
 ---
 
 ## Explição

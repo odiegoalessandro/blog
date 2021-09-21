@@ -8,6 +8,7 @@ import Welcome from "../components/Welcome"
 import PageDown from "../components/PageDown"
 import Projects from "../components/Projects"
 import { motion, Variants } from 'framer-motion'
+import ProjectType from "../types/ProjectType"
 
 const variants: Variants = {
   hidden: {
@@ -30,7 +31,11 @@ const elementVariants: Variants = {
   visible: {opacity: 1}
 }
 
-export default function Home({ projects }) {
+interface HomeProps {
+  projects: ProjectType[]
+}
+
+const Home: React.FC<HomeProps> = ({ projects }) => {
   return (
     <>
       <Head>
@@ -67,6 +72,8 @@ export default function Home({ projects }) {
     </>
   )
 }
+
+export default Home
 
 export const getStaticProps: GetStaticProps = async () => {
   const projects = getLatestProjects()
