@@ -1,4 +1,4 @@
-import { Box, Heading, Center, Button, Link, HStack } from "@chakra-ui/react"
+import { Box, Heading, Center, Button, Link, HStack, useColorModeValue } from "@chakra-ui/react"
 import Card from '../components/Card'
 import { motion, Variants } from 'framer-motion'
 import ProjectType from "../types/ProjectType"
@@ -30,7 +30,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
       <motion.div
         initial="hidden"
         animate="visible"
-        variants={variants}
+        variants={variants}        
       >
         <Heading 
           marginTop="5rem"
@@ -47,6 +47,8 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
           marginTop="2rem"
           justify="space-evenly"
           align="center"
+          role="feed"
+          as="section"
           spacing={{
             base: "0",
             sm: "0",
@@ -72,12 +74,20 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
         </HStack>
         <Center marginTop="1rem">
           <Link
-            _hover={{}}
+            _hover={{
+              bgColor: useColorModeValue("gray.300", "gray.600")
+            }}
             href="/projects"
+            w="100px"
+            h="40px"
+            bgColor={useColorModeValue("gray.100", "gray.700")}
+            fontWeight="bold"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            borderRadius="sm"
           >
-            <Button>
-              Ver mais
-            </Button>
+            Ver mais
           </Link>
         </Center>
       </motion.div>
