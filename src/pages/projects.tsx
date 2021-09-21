@@ -43,27 +43,29 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
           <Text opacity=".7" marginTop=".5rem">
             Alguns projetos feitos por mim
           </Text>
-          <List
-            marginTop="4rem"
-            display="grid"
-            gridTemplateColumns={{
-              xl: "1fr 1fr",
-              lg: "1fr 1fr",
-              md: "1fr",
-              sm: "1fr",
-              base: "1fr"
-            }}
-            justifyItems="center"
-            gridGap=".7rem"
-          >
-            {
-              projects.map((project, index) => (
-                <ListItem key={index}>
-                  <Card content={project} />
-                </ListItem>
-              ))
-            }
-          </List>
+          <Center>
+            <List
+              marginTop="4rem"
+              display="grid"
+              gridTemplateColumns={{
+                xl: "1fr 1fr",
+                lg: "1fr 1fr",
+                md: "1f 1fr",
+                sm: "1fr",
+                base: "1fr"
+              }}
+              justifyItems="center"
+              gridGap=".7rem"
+            >
+              {
+                projects.map((project, index) => (
+                  <ListItem key={index}>
+                    <Card content={project} />
+                  </ListItem>
+                ))
+              }
+            </List>
+          </Center>
         </Box>
       </Center>
     </>
