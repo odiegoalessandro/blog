@@ -3,7 +3,11 @@ import { Heading, Text, useColorModeValue, Link } from "@chakra-ui/react"
 export default function Welcome(){
   return (
     <>
-      <Heading as="h1" fontSize="4xl" marginTop="10rem" role="heading">
+      <Heading
+        as="h1"
+        fontSize="4xl"
+        marginTop="10rem"
+      >
         Oi!
       </Heading>
       <Heading 
@@ -23,16 +27,14 @@ export default function Welcome(){
           content: "'.'",
           color: useColorModeValue('black', 'white')
         }}
-        role="heading"
       >
         Diego
       </Heading>
-      <Text role="textbox">
+      <Text>
         Eu aprendo rápido e sou estudante de informática.
         Atualmente sou muito interessado em desenvolvimento front-end. {" "}
         <Link
           href="/about"
-          role="link"
           fontWeight="bold"
           color="#FF0080"
           pos="relative"
