@@ -36,7 +36,8 @@ export function  getAllProjects(){
     return {
       title: data.title,
       excerpt: data.excerpt,
-      slug
+      slug,
+      image: data.image
     }
   })
 
