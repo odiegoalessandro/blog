@@ -30,11 +30,11 @@ export default function Footer(){
               _hover={{
                 color: "#ff0080"
               }}
+              aria-label="Link para meu github"
               >
               <FontAwesomeIcon
                 icon={faGithub}
                 role="img"
-                aria-label="Link para meu github"
               />
             </Link>
             <Link 
@@ -44,11 +44,11 @@ export default function Footer(){
               _hover={{
                 color: "#ff0080"
               }}
+              aria-label="Link para meu linkedin"  
             >
               <FontAwesomeIcon
                 icon={faLinkedin}
                 role="img"
-                aria-label="Link para meu linkedin"  
               />
             </Link>
             <Link 
@@ -58,11 +58,11 @@ export default function Footer(){
               _hover={{
                 color: "#ff0080"
               }}
+              aria-label="Link para meu twitter"
             >
               <FontAwesomeIcon
                 icon={faTwitter}
                 role="img"
-                aria-label="Link para meu twitter"
               />
             </Link>
           </HStack>
