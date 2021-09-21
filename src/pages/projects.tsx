@@ -3,11 +3,34 @@ import ProjectType from "../types/ProjectType"
 import { getAllProjects } from "../utils/projects"
 import Head from 'next/head'
 import React from "react"
-import { Box, Center, Heading, Text, List, ListItem } from "@chakra-ui/react"
+import { Box, Center, Heading, Text, List, ListItem, ListProps, ListItemProps } from "@chakra-ui/react"
 import Card from "../components/Card"
-
+import { motion, Variants } from "framer-motion"
 interface ProjectsProps {
   projects: ProjectType[]
+}
+
+const MotionList = motion<ListProps>(List)
+const MotionListItem = motion<ListItemProps>(ListItem)
+
+const ListVariants: Variants = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2
+    }
+  }
+}
+
+const ListItemVariants: Variants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1
+  }
 }
 
 const Projects: React.FC<ProjectsProps> = ({ projects }) => {
@@ -44,9 +67,12 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
             Alguns projetos feitos por mim
           </Text>
           <Center>
-            <List
+            <MotionList
               marginTop="4rem"
               display="grid"
+              initial="hidden"
+              animate="visible"
+              variants={ListVariants}
               gridTemplateColumns={{
                 xl: "1fr 1fr",
                 lg: "1fr 1fr",
@@ -59,12 +85,15 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
             >
               {
                 projects.map((project, index) => (
-                  <ListItem key={index}>
+                  <MotionListItem
+                    key={index}
+                    variants={ListItemVariants}
+                  >
                     <Card content={project} />
-                  </ListItem>
+                  </MotionListItem>
                 ))
               }
-            </List>
+            </MotionList>
           </Center>
         </Box>
       </Center>
