@@ -1,5 +1,6 @@
 import { Heading, Text, Link, Image } from '@chakra-ui/react'
 import React from 'react'
+import useInView from 'react-cool-inview'
 import ProjectType from '../types/ProjectType'
 
 interface CardProps {
@@ -7,13 +8,19 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ content }, rest) => {
+  const { observe, inView } = useInView({
+    unobserveOnEnter: true,
+    rootMargin: "-60px 0px",
+  })
+
   return (
     <Link
+      ref={observe}
       href={`/projects/${content.slug}`}
       w={{
-        lg: "20rem",
+        lg: "18rem",
         sm: "18rem",
-        md: "20rem",
+        md: "18rem",
         xl: "25rem",
         base: "15rem"
       }}
@@ -29,23 +36,29 @@ const Card: React.FC<CardProps> = ({ content }, rest) => {
       flexDir="column"
       {...rest}
     >
-      <div>
-        <Heading fontSize="xl">{content.title}</Heading>
-        <Text
-          opacity=".7"
-          fontSize="sm"
-        >
-          {content.excerpt}
-        </Text>
-      </div>
-      <Image src={`/${content.image}`} />
-      <Text
-        _hover={{
-          color: "#ff0080"
-        }}
-      >
-        Veja mais
-      </Text>
+      {
+        inView && (
+          <>
+            <div>
+              <Heading fontSize="xl">{content.title}</Heading>
+              <Text
+                opacity=".7"
+                fontSize="sm"
+              >
+                {content.excerpt}
+              </Text>
+            </div>
+            <Image src={`./${content.image}`} />
+            <Text
+              _hover={{
+                color: "#ff0080"
+              }}
+            >
+              Veja mais
+            </Text>
+          </>
+        )
+      }
      </Link>
   )
 }
