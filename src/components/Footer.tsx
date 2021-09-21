@@ -11,15 +11,17 @@ export default function Footer(){
         h="8rem"
         align="center"
         marginTop="3rem"
-        >
+        as="footer"
+      >
         <Divider borderBottom="2px" />
-        <Box p="2rem">
+        <Box p="2rem" role="navigation">
           <Heading size="sm">
             Minhas redes sociais
           </Heading>
           <HStack
             justifyContent="center"
             spacing="1rem"
+            as="ul"
           >
             <Link 
               href="https://github.com/odiegoalessandro"
@@ -29,7 +31,11 @@ export default function Footer(){
                 color: "#ff0080"
               }}
               >
-              <FontAwesomeIcon icon={faGithub} role="img" />
+              <FontAwesomeIcon
+                icon={faGithub}
+                role="img"
+                aria-label="Link para meu github"
+              />
             </Link>
             <Link 
               href="https://www.linkedin.com/in/diego-alessandro-da-cruz-martins-87b2541b4/"
@@ -39,7 +45,11 @@ export default function Footer(){
                 color: "#ff0080"
               }}
             >
-              <FontAwesomeIcon icon={faLinkedin} />
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                role="img"
+                aria-label="Link para meu linkedin"  
+              />
             </Link>
             <Link 
               href="https://twitter.com/odiegoalessandr"
@@ -49,7 +59,11 @@ export default function Footer(){
                 color: "#ff0080"
               }}
             >
-              <FontAwesomeIcon icon={faTwitter} />
+              <FontAwesomeIcon
+                icon={faTwitter}
+                role="img"
+                aria-label="Link para meu twitter"
+              />
             </Link>
           </HStack>
         </Box>
