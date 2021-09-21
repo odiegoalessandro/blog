@@ -26,7 +26,6 @@ const Card: React.FC<CardProps> = ({ content }, rest) => {
       }}
       h="22rem"
       _hover={{}}
-      role="link"
       border="1px solid currentcolor"
       borderRadius="md"
       p="1rem"
@@ -34,13 +33,16 @@ const Card: React.FC<CardProps> = ({ content }, rest) => {
       justifyContent="space-between"
       alignItems="left"
       flexDir="column"
+      role="article"
       {...rest}
     >
       {
         inView && (
           <>
             <div>
-              <Heading fontSize="xl">{content.title}</Heading>
+              <Heading fontSize="xl">
+                {content.title}
+              </Heading>
               <Text
                 opacity=".7"
                 fontSize="sm"
@@ -48,7 +50,7 @@ const Card: React.FC<CardProps> = ({ content }, rest) => {
                 {content.excerpt}
               </Text>
             </div>
-            <Image src={`./${content.image}`} />
+            <Image src={`./${content.image}`} alt={content.title}  />
             <Text
               _hover={{
                 color: "#ff0080"
