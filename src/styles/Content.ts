@@ -1,12 +1,10 @@
 import styled from '@emotion/styled'
+import { Box } from '@chakra-ui/react'
 
-export default styled.div`
+export default styled(Box)`
   h1, h2, h3{
-    border-left: 4px solid #ff0080;
-    padding-left: .7rem;
-    margin-top: 5rem;
-    margin-bottom: 2rem;
     font-weight: 700;
+    margin: 3rem 0 .7rem 0 ;
   }
   h1{
     font-size: 2.25rem;
