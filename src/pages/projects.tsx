@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next"
-import ProjectType from "../types/ProjectType"
+import PostType from "../types/PostType"
 import { getAllProjects } from "../utils/projects"
 import Head from 'next/head'
 import React from "react"
@@ -7,7 +7,7 @@ import { Box, Center, Heading, Text, List, ListItem, ListProps, ListItemProps } 
 import Card from "../components/Card"
 import { motion, Variants } from "framer-motion"
 interface ProjectsProps {
-  projects: ProjectType[]
+  projects: PostType[]
 }
 
 const MotionList = motion<ListProps>(List)
@@ -89,7 +89,10 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                     key={index}
                     variants={ListItemVariants}
                   >
-                    <Card content={project} />
+                    <Card
+                      content={project}
+                      type="project"
+                    />
                   </MotionListItem>
                 ))
               }
