@@ -1,7 +1,7 @@
-import { Box, Heading, Center, Button, Link, HStack, useColorModeValue } from "@chakra-ui/react"
+import { Box, Heading, Center, Link, HStack, useColorModeValue } from "@chakra-ui/react"
 import Card from '../components/Card'
 import { motion, Variants } from 'framer-motion'
-import ProjectType from "../types/ProjectType"
+import PostType from "../types/PostType"
 import React from "react"
 
 const variants: Variants = {
@@ -20,7 +20,7 @@ const variants: Variants = {
 }
 
 interface ProjectsProps {
-  projects: ProjectType[]
+  projects: PostType[]
 }
 
 const Projects: React.FC<ProjectsProps> = ({ projects }) => {
@@ -67,7 +67,11 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
           {
             projects.map((card, index) => {
               return (
-                <Card content={card} key={index} />
+                <Card 
+                  content={card}
+                  key={index}
+                  type="project"
+                />
               )
             })
           }
