@@ -1,8 +1,9 @@
-export default interface ProjectType {
+export default interface PostType {
   title: string
-  data?: string
+  date?: string
   excerpt: string
   author?: string
   image?: string
   slug?: string
+  duration?: number
 }
