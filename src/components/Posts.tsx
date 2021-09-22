@@ -58,7 +58,7 @@ const Posts: React.FC<PostsProps> = ({ posts }) => {
             _hover={{
               bgColor: useColorModeValue("gray.300", "gray.600")
             }}
-            href="/projects"
+            href="/posts"
             w="100px"
             h="40px"
             bgColor={useColorModeValue("gray.100", "gray.700")}
