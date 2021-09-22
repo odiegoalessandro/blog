@@ -70,6 +70,7 @@ const Slug: React.FC<SlugProps> = ({ data }) => {
           <HStack marginTop="1rem">
             <Text
               fontSize="sm"
+              fontWeight="bold"
               color="#ff0080"
             >
               {data.metadata.author}
@@ -78,7 +79,7 @@ const Slug: React.FC<SlugProps> = ({ data }) => {
               {postingDate}
             </Text>
             <span>·</span>
-            <Text>
+            <Text fontSize="sm">
               {data.metadata.duration}min de leitura
             </Text>
           </HStack>
