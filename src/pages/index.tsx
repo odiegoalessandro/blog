@@ -8,7 +8,9 @@ import Welcome from "../components/Welcome"
 import PageDown from "../components/PageDown"
 import Projects from "../components/Projects"
 import { motion, Variants } from 'framer-motion'
-import ProjectType from "../types/ProjectType"
+import PostType from "../types/PostType"
+import Posts from "../components/Posts"
+import { getLatestPosts } from "../utils/posts"
 
 const variants: Variants = {
   hidden: {
@@ -32,10 +34,11 @@ const elementVariants: Variants = {
 }
 
 interface HomeProps {
-  projects: ProjectType[]
+  projects: PostType[]
+  posts: PostType[]
 }
 
-const Home: React.FC<HomeProps> = ({ projects }) => {
+const Home: React.FC<HomeProps> = ({ projects, posts }) => {
   return (
     <>
       <Head>
@@ -66,6 +69,7 @@ const Home: React.FC<HomeProps> = ({ projects }) => {
               <PageDown />
             </motion.div>
             <Projects projects={projects} />
+            <Posts posts={posts} />
           </motion.div>
         </Box>
       </Center>
@@ -77,10 +81,12 @@ export default Home
 
 export const getStaticProps: GetStaticProps = async () => {
   const projects = getLatestProjects()
+  const posts = getLatestPosts()
 
   return {
     props: {
-      projects
+      projects,
+      posts
     }
   }
 }

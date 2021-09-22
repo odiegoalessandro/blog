@@ -90,8 +90,8 @@ const Card: React.FC<CardProps> = ({ content, type }, rest) => {
         <Link
           ref={observe}
           href={`/posts/${content.slug}`}
+          h="6rem"
           w="full"
-          h="7rem"
           display="flex"
           flexDir="column"
           justifyContent="space-evenly"
@@ -103,7 +103,13 @@ const Card: React.FC<CardProps> = ({ content, type }, rest) => {
           _hover={{}}
         >
           <Heading
-            fontSize="3xl"
+            fontSize={{
+              xl:"3xl",
+              lg: "3xl",
+              md: "2xl",
+              sm: "xl",
+              base: "lg"
+            }}
           >
             {content.title}
           </Heading>
