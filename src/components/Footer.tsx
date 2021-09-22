@@ -23,7 +23,9 @@ export default function Footer(){
             spacing="1rem"
             as="ul"
           >
-            <li>
+            <li style={{
+              listStyle: "none"
+            }}>
               <Link 
                 href="https://github.com/odiegoalessandro"
                 fontSize="25px"
@@ -39,7 +41,9 @@ export default function Footer(){
                 />
               </Link>
             </li>
-            <li>
+            <li style={{
+              listStyle: "none"
+            }}>
               <Link 
                 href="https://www.linkedin.com/in/diego-alessandro-da-cruz-martins-87b2541b4/"
                 fontSize="25px"
@@ -55,7 +59,9 @@ export default function Footer(){
                 />
               </Link>
             </li>
-            <li>
+            <li style={{
+              listStyle: "none"
+            }}>
               <Link 
                 href="https://twitter.com/odiegoalessandr"
                 fontSize="25px"
