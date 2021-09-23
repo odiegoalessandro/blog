@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /*
-Disallow: /src/_posts/*
-Disallow: /src/_projects/*
-Disallow: /src/images/*
-Disallow: /public/*
