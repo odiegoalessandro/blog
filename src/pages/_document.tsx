@@ -32,6 +32,7 @@ class MyDocument extends Document {
           <meta name="robots" content="all" />
           <meta name="description" content="Olá meu nome é Diego e esse é meu site pessoal" />
           <meta name="theme-color" content="#1A202C" />
+          <link rel="icon" type="image/png" href="/favicon.png" />
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
