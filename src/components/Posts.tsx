@@ -55,7 +55,7 @@ const Posts: React.FC<PostsProps> = ({ posts }) => {
           }
         </VStack>
         <Center marginTop="1rem">
-          <Link href="/projects">
+          <Link href="/posts">
             <LinkStyle
               _hover={{
                 bgColor: useColorModeValue("gray.300", "gray.600")
