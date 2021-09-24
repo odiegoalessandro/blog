@@ -1,4 +1,4 @@
-import { Box, Text, Heading, Link, Image, Code } from '@chakra-ui/react'
+import { Box, Text, Heading, Link, Image } from '@chakra-ui/react'
 import React from 'react'
 import useInView from 'react-cool-inview'
 

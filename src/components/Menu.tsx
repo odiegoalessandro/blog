@@ -1,4 +1,5 @@
-import { IconButton, Flex, Link, useColorModeValue } from "@chakra-ui/react";
+import { IconButton, Flex, useColorModeValue } from "@chakra-ui/react";
+import Link from "./Link";
 import { useColorMode } from '@chakra-ui/react'
 import { SunIcon, MoonIcon } from '@chakra-ui/icons'
 
@@ -24,31 +25,12 @@ export default function Menu(){
       as="header"
       role="navigation"
     > 
-      <Link
+      <Link 
         href="/"
-        transition=".3s"
-        pos="relative"
+        color="#fff"
         fontWeight="bold"
-        fontSize="1.2rem"
-        _hover={{
-          color: "#ff0080",
-          _after: {
-            w: "100%",
-          }
-        }}
-        _after={{
-          content: "''",
-          height: "2px",
-          bgColor: "#FF0080",
-          position: "absolute",
-          left: "0",
-          bottom: "-3px",
-          transition: ".3s",
-          w: "0"
-        }}
-        role="link"
       >
-        Diego alessandro
+        Diego Alessandro
       </Link>
       <IconButton
         aria-label="Mudar o tema"

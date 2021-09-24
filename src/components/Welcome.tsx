@@ -1,4 +1,5 @@
-import { Heading, Text, useColorModeValue, Link } from "@chakra-ui/react"
+import { Heading, Text, useColorModeValue } from "@chakra-ui/react"
+import Link from "./Link"
 
 export default function Welcome(){
   return (
@@ -33,30 +34,14 @@ export default function Welcome(){
       <Text>
         Eu aprendo rápido e sou estudante de informática.
         Atualmente sou muito interessado em desenvolvimento front-end. {" "}
-        <Link
+        <Link 
           href="/about"
+          color="#ff0080"
           fontWeight="bold"
-          color="#FF0080"
-          pos="relative"
-          transition=".3s"
-          _hover={{
-            _after: {
-              w: "100%",
-            }
-          }}
-          _after={{
-            content: "''",
-            height: "2px",
-            bgColor: "#FF0080",
-            position: "absolute",
-            left: "0",
-            bottom: "-3px",
-            transition: ".3s",
-            w: "0"
-          }}
         >
           Me procurem
-        </Link> 
+        </Link>
+        
         {" "}
         para podermos conversar sobre vagas front-end!
       </Text>

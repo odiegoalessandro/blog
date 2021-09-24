@@ -1,4 +1,5 @@
-import { Box, Heading, Center, Link, useColorModeValue, VStack } from "@chakra-ui/react"
+import { Box, Heading, Center, Link as LinkStyle, useColorModeValue, VStack } from "@chakra-ui/react"
+import Link from 'next/link'
 import Card from '../components/Card'
 import PostType from "../types/PostType"
 import { motion, Variants } from 'framer-motion'
@@ -54,21 +55,22 @@ const Posts: React.FC<PostsProps> = ({ posts }) => {
           }
         </VStack>
         <Center marginTop="1rem">
-          <Link
-            _hover={{
-              bgColor: useColorModeValue("gray.300", "gray.600")
-            }}
-            href="/posts"
-            w="100px"
-            h="40px"
-            bgColor={useColorModeValue("gray.100", "gray.700")}
-            fontWeight="bold"
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            borderRadius="sm"
-          >
-            Ver mais
+          <Link href="/projects">
+            <LinkStyle
+              _hover={{
+                bgColor: useColorModeValue("gray.300", "gray.600")
+              }}
+              w="100px"
+              h="40px"
+              bgColor={useColorModeValue("gray.100", "gray.700")}
+              fontWeight="bold"
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              borderRadius="sm"
+            >
+              Ver mais
+            </LinkStyle>
           </Link>
         </Center>
       </motion.div>
