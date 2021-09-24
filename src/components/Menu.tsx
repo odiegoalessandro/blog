@@ -27,7 +27,7 @@ export default function Menu(){
     > 
       <Link 
         href="/"
-        color="#fff"
+        color="currentcolor"
         fontWeight="bold"
       >
         Diego Alessandro
