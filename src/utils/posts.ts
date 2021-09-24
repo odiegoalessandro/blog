@@ -1,8 +1,6 @@
 import fs from 'fs'
 import path from 'path'
 import grayMatter from 'gray-matter'
-import { remark } from 'remark'
-import html from 'remark-html'
 
 const directory = path.join(process.cwd(), "src", "_posts")
 
@@ -17,11 +15,10 @@ export async function getPostBySlug(slug: string){
   const postPath = path.join(directory, `${slug}.md`)
   const post = fs.readFileSync(postPath)
   const { content, data: metadata } = grayMatter(post)
-  const convertedContent = await remark().use(html).process(content || '')
 
   return {
     metadata,
-    content: convertedContent.toString()
+    content
   }
 }
 

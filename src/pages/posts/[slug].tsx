@@ -3,8 +3,10 @@ import { GetStaticPaths, GetStaticProps } from "next"
 import { Box, Center, Heading, HStack, Text, Image } from "@chakra-ui/react"
 import Head from 'next/head'
 import React from "react"
-import Content from "../../styles/Content"
-
+import ReactMarkdown from "react-markdown"
+import remarkGfm from "remark-gfm"
+import ChakraUIRenderer from "chakra-ui-markdown-renderer"
+import theme from "../../themes/markdown-theme"
 interface SlugProps {
   data: {
     metadata: {
@@ -88,8 +90,10 @@ const Slug: React.FC<SlugProps> = ({ data }) => {
             marginTop="2rem"
             alt={data.metadata.title}
           />
-          <Content 
-            dangerouslySetInnerHTML={{__html: data.content}}
+          <ReactMarkdown 
+            plugins={[remarkGfm]}
+            children={data.content}
+            components={ChakraUIRenderer(theme)}
           />
         </Box>
       </Center>

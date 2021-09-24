@@ -22,8 +22,6 @@ verificar o que mudou, imagina a situação de ter que verificar varios commits
 A base de um commit descritivel é que você deve saber com o que está trabalhando apenas
 lendo o commit. Normalmente utilizamos palavras imperativas no presente.
 
-<br/>
-
 Por exemplo:
 
 * alterar a proporção do vídeo do perfil da empresa
