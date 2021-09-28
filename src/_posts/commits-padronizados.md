@@ -4,7 +4,7 @@ excerpt: ""
 author: "Diego Alessandro"
 date: "09-04-2021"
 image: "commits.jpeg"
-duration: 2
+duration: 3
 ---
 
 ## Introduçao
