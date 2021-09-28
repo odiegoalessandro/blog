@@ -92,7 +92,7 @@ const Card: React.FC<CardProps> = ({ content, type }, rest) => {
         <Link href={`/posts/${content.slug}`}>
           <LinkStyle
             ref={observe}
-            h="6rem"
+            h="6.5rem"
             w="full"
             display="flex"
             flexDir="column"
@@ -106,8 +106,8 @@ const Card: React.FC<CardProps> = ({ content, type }, rest) => {
           >
             <Heading
               fontSize={{
-                xl:"3xl",
-                lg: "3xl",
+                xl:"2xl",
+                lg: "2xl",
                 md: "2xl",
                 sm: "xl",
                 base: "lg"
