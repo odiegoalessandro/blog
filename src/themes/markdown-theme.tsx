@@ -1,6 +1,9 @@
-import { Box, Text, Heading, Link, Image } from '@chakra-ui/react'
+import { Box, Text, Heading, Link, Image, Center } from '@chakra-ui/react'
 import React from 'react'
 import useInView from 'react-cool-inview'
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import style from "react-syntax-highlighter/dist/cjs/styles/prism/dracula"
+
 
 const theme: any = {
   h1: (props) => {
@@ -103,6 +106,17 @@ const theme: any = {
       <Box ref={observe}>
         { inView && <Image src={src} alt={alt} /> }
       </Box>
+    )
+  },
+  code: (props) => {
+    const { children, className } = props
+    const language = className.replace('language-', '')
+    return(
+      <SyntaxHighlighter
+        language={language}
+        style={style}
+        children={children}
+      />
     )
   }
 }
