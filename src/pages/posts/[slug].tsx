@@ -1,6 +1,6 @@
 import { getAllSlugs, getPostBySlug } from "../../utils/posts"
 import { GetStaticPaths, GetStaticProps } from "next"
-import { Box, Center, Heading, HStack, Text, Image } from "@chakra-ui/react"
+import { Flex, Center, Heading, HStack, Text, Image } from "@chakra-ui/react"
 import Head from 'next/head'
 import React from "react"
 import ReactMarkdown from "react-markdown"
@@ -56,7 +56,10 @@ const Slug: React.FC<SlugProps> = ({ data }) => {
           xl: "20rem"
         }}
       >
-        <Box w="full">
+        <Flex
+          w="full"
+          flexDir="column"
+        >
           <Heading
             marginTop="8rem"
             fontSize="5xl"  
@@ -95,7 +98,7 @@ const Slug: React.FC<SlugProps> = ({ data }) => {
             children={data.content}
             components={ChakraUIRenderer(theme)}
           />
-        </Box>
+        </Flex>
       </Center>
     </>
   )
