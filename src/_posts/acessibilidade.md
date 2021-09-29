@@ -1,5 +1,5 @@
 ---
-title: "WAI-ARIA - Acessibilidade na web"
+title: "ARIA acessibilidade na web"
 excerpt: "Aprenda a como aumentar a acessibilidade no seu site"
 author: "Diego Alessandro"
 date: "09-28-2021"
