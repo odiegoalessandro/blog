@@ -118,12 +118,6 @@ const Card: React.FC<CardProps> = ({ content, type }, rest) => {
             <Text fontSize="sm">
               <b>{postingDate}</b> • {content.duration}min de leitura
             </Text>
-            <Text
-              opacity=".7"
-              fontSize="sm"
-            >
-              {content.excerpt}
-            </Text>
           </LinkStyle>
         </Link>
       )
