@@ -3,10 +3,10 @@ import PostType from "../types/PostType"
 import { getAllPosts } from "../utils/posts"
 import Head from 'next/head'
 import React from "react"
-import { Box, Center, Heading, Text, List, ListItem, ListProps, ListItemProps } from "@chakra-ui/react"
+import { Box, Center, Heading, Text, List, ListItem, ListProps, ListItemProps, Input} from "@chakra-ui/react"
 import Card from "../components/Card"
 import { motion, Variants } from "framer-motion"
-
+import { useState } from "react"
 interface PostsProps {
   posts: PostType[]
 }
@@ -35,6 +35,16 @@ const ListItemVariants: Variants = {
 }
 
 const Posts: React.FC<PostsProps> = ({ posts }) => {
+  const [search, updateSearch] = useState('')
+  const filtredPosts = posts.filter(post => 
+    post.title.toLowerCase().includes(search.trim())  
+  )
+
+  const handleChange = e => {
+    e.preventDefault()
+    updateSearch(e.target.value.toLowerCase())
+  }
+
   return (
     <>
       <Head>
@@ -67,16 +77,26 @@ const Posts: React.FC<PostsProps> = ({ posts }) => {
           <Text opacity=".7" marginTop=".5rem">
             Alguns posts que possam te ajudar
           </Text>
+          <Heading fontSize="lg" marginTop="1rem" marginBottom=".5rem">
+            Procurar
+          </Heading>
+          <Input
+            onChange={handleChange}
+            placeholder="Pesquise"
+            value={search}
+            type="text"
+          />
           <Center>
             <MotionList
               marginTop="4rem"
               initial="hidden"
               w="full"
               animate="visible"
+              spacing="1rem"
               variants={ListVariants}
             >
               {
-                posts.map((project, index) => (
+                filtredPosts.map((project, index) => (
                   <MotionListItem
                     key={index}
                     variants={ListItemVariants}
