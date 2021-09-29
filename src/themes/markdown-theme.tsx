@@ -1,4 +1,4 @@
-import { Box, Text, Heading, Link, Image, Center } from '@chakra-ui/react'
+import { Box, Text, Heading, Link, Image, Code } from '@chakra-ui/react'
 import React from 'react'
 import useInView from 'react-cool-inview'
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
@@ -110,14 +110,20 @@ const theme: any = {
   },
   code: (props) => {
     const { children, className } = props
-    const language = className.replace('language-', '')
-    return(
-      <SyntaxHighlighter
-        language={language}
-        style={style}
-        children={children}
-        showLineNumbers={true}
-      />
+    const language = className?.replace('language-', '')
+    return (
+      <>
+        {language ? (
+          <SyntaxHighlighter
+            language={language}
+            style={style}
+            children={children}
+            showLineNumbers={true}
+          />
+        ) : (
+          <Code children={children} />
+        )}
+      </>
     )
   }
 }
