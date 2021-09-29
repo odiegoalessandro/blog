@@ -58,25 +58,7 @@ const theme: any = {
     const {children, href} = props
     return (
       <Link
-        transition=".3s"
-        pos="relative"
-        fontSize="1.2rem"
-        _hover={{
-          color: "#ff0080",
-          _after: {
-            w: "100%",
-          }
-        }}
-        _after={{
-          content: "''",
-          height: "2px",
-          bgColor: "#FF0080",
-          position: "absolute",
-          left: "0",
-          bottom: "-3px",
-          transition: ".3s",
-          w: "0"
-        }}
+        color="#ff0080"
         href={href}
       >
         {children}
