@@ -11,46 +11,45 @@ duration: 10
 
 Pelo menos 45 milhões de brasileiros são portadores de algum tipo de deficiência, isso representa quase 25% da
 população brasileira segundo o levatamento feito pelo IBGE em 2019. Logo se você tem um site não acessivel é
-basicamente privar 25% dos brasileiros de acessarem e consumirem seu conteudo seja qual ele for. Tambem sabemos que
+basicamente privar 25% dos brasileiros de acessarem e consumirem seu conteúdo seja qual ele for. Tambem sabemos que
 pessoas com deficiêcia movimentam cerca de 22 bilhões de dólares por ano. Ainda não está convencido de que ter
-um site acessivel acessivel trás apenas vantagens? Pois bem então aqui vai uma lista de bons motivos para criar
+um site acessivel trás apenas vantagens? Pois bem então aqui vai uma lista de bons motivos para criar
 sites acessiveis:  
 
 1. Vantagem competitiva dentro de negocios.
 2. Maior visibilidade em mecanismos de busca(google, firefox e etc).
-3. Facilidade no consumo do conteudo proposto.
+3. fácilidade no consumo do conteúdo proposto.
 4. Um passo a mais para um ambiente online inclusivo e igualitario.
-5. Maior relevancia por consequencia aumento na receita da empresa.
+5. Maior relevancia por consequência aumento na receita da empresa.
 6. Imagem positiva.
 
-Além disso também não podemos esquecer que a acessibilidade em paginas web é obrigatoria por lei:
+Além disso também não podemos esquecer que a acessibilidade em páginas web é obrigatoria por lei:
 
 > Art. 63 da lei "é obrigatória a acessibilidade nos sítios da internet mantidos por empresas com sede ou representação
 > comercial no País ou por órgãos de governo, para uso da pessoa com deficiência, garantindo-lhe acesso às informações
 > disponíveis, conforme as melhores práticas e diretrizes de acessibilidade adotadas internacionalmente"
 
-## Oque é WAI-ARIA?
+## O que é WAI-ARIA?
 
 A WAI-ARIA serve para estender o significado das interações do seu site. Hoje em dia as tags HTML faz um trabalho
-muito importante de dar significado a estruturas de layout, possibilitando você poder marcar o que é um menu de
-navegação, um cabeçalho, um rodapé e etc. Isso ajuda a definir a importância de cada elemento.
-WAI-ARIA ajuda na interação de elementos como um clique avisando o usuário de que ele está sendo movido para outra pagina
-por exemplo.
+muito importante de dar significado a estruturas do layout, possibilitando você poder marcar o que é um menu de
+navegação, um cabeçalho, um rodapé e etc. Isso ajuda a definir a importância de cada elemento. WAI-ARIA ajuda o leitor de
+tela na interação de elementos como um clique avisando o usuário de que ele está sendo movido para outra página por exemplo.
 
 ## Semântica
 
-A semântica é dividida em duas partes roles que define o tipo do elemento que o usuário está interagindo e states/properties
-são responsaveis de definir o estado do elemento. Por exemplo você fala que esse elemento é um acordeon com os states/properties
+A semântica é dividida em duas partes, os roles que define o tipo do elemento que o usuário está interagindo e states/properties que são
+são responsáveis de definir o estado do elemento. Por exemplo você fala que esse elemento é um acordeon com os roles de states e properties
 você diz se esse acordeon está aberto ou fechado.
 
 ### Roles
 
-São os 3 tipos principais de roles. Cada tipo de role é responsavel por um determinado tipo de elemento.
+São os 3 principais tipos de role. Cada tipo de role é responsavel por um determinado grupo de elementos.
 
 * **Widgets** marcação de elementos soltos, como botões, checkbox, links, tabs etc.
-* **Document Structure** para definir a estrutura de organização da pagina. São estruturas apenas para organizaçao e estruturação
+* **Document Structure** para definir a estrutura de organização da página. São estruturas apenas para organizaçao e estruturação
 como o header, footer, sidebar, main e etc.
-* **Landmarks** são roles especificos para navegação, exemplo: buscas, conteudo principal, sideba etc.
+* **Landmarks** são roles específicos para navegação, exemplo: buscas, conteúdo principal, sidebar etc.
 
 #### Role Document Structure
 
@@ -58,7 +57,7 @@ Essa categoria serve para falar que esse elemento faz parte do layout. Exemplo:
 
 ```html
 <article role="article">
-  <p>Conteudo</p>
+  <p>conteúdo</p>
 </article>
 ```
 
@@ -67,13 +66,13 @@ para envolver o texto do artigo:
 
 ```html
 <div class="post" role="article">
-  <p>Conteudo</p>
+  <p>conteúdo</p>
 </div>
 ```
 
 #### Role Widget
 
-Tabs é um elemento muito comum. Ajuda muito na organização dos conteudos, mas pode ser um problema pra quem usa leitores de tela. Então
+Tabs é um elemento muito comum. Ajuda muito na organização dos conteúdos, mas pode ser um problema pra quem usa leitores de tela. Então
 troque isso:  
 
 ```html
@@ -97,6 +96,7 @@ troque isso:
 ```
 
 Por isso:
+
 ``` html
 <ul class="tabs">
    <li>
@@ -120,7 +120,7 @@ Por isso:
 ```
 #### Role Landmarks
 
-As **landmarks** servem para navegar pela pagina. Com esse tipo de role você vai marcar partes importantes da pagina assim fica mais facil
+As **landmarks** servem para navegar pela página. Com esse tipo de role você vai marcar partes importantes do conteúdo assim fica mais fácil
 para que o usuário encontre blocos de informações importantes. Exemplo:
 
 Para componentes que contém links para navegação:
@@ -135,13 +135,14 @@ Para o bloco principal da página:
 <main role="main"></main>
 ```
 
-Você deve estar pensando: "Nossa, mas toda a vez que eu criar uma tag vou precisar colocar o role?", resposta: "não". Hoje em dia o HTML já faz
-isso automaticamente, você so vai precisar usar esse tipo de role caso você tenha que marcar algo sem poder usar a tag correta, mas tente sempre
-usar as tags relativas. Algumas roles não possuem tags relativas veja algumas delas e seus usos: 
+Você deve estar pensando: "Nossa, mas toda a vez que eu criar uma tag vou precisar colocar o role?", e eu respondo: "não".
+Hoje em dia o HTML já faz isso automaticamente, você só vai precisar usar esse tipo de role caso você tenha que marcar algo
+sem poder usar a tag correta, mas tente sempre usar as tags relativas. Algumas roles não possuem tags relativas veja
+algumas delas e seus usos: 
 
-**banner** Uma região que possui uma imagem ou titulo em destaque que introduz a página. Pode ser aplicado onde você coloca logos de outras empresas ou marcas, publicidade e etc.
+**banner** Uma região que possui uma imagem ou título em destaque que introduz a página. Pode ser aplicado onde você coloca logos de outras empresas ou marcas, publicidade e etc.
 
-**complementary** Para marcar uma seção complementar algo que agrega informações para o conteudo principal. Uma sidebar, footer, nav e etc
+**complementary** Para marcar uma seção complementar algo que agrega informações para o conteúdo principal. Uma sidebar, footer, nav e etc
 podem ser identificadas nessa role.
 
 **content info** Usado para marcar informações sobre o site. Como por exemplo rodapé, informações de copyright, links, termos de uso e etc.
@@ -163,14 +164,14 @@ confundir o leitor de tela gerando uma má esperiência para o usuário.
 
 ## Dicas e observações
 
-Usar WAI-ARIA é muito simples pois fica muito facil deixar qualquer pagina pronta acessivel mas prefira usar as tags relativas, exemplo:
+Usar WAI-ARIA é muito simples pois fica muito fácil deixar qualquer página pronta acessivel mas prefira usar as tags relativas, exemplo:
 
 Faça isso:
 
 ```html
 <article>
-  <h1>titulo</h1>
-  <p>conteudo</p>
+  <h1>título</h1>
+  <p>conteúdo</p>
 </article>
 ```
 
@@ -178,22 +179,22 @@ Ao invés disso:
 
 ```html
 <div role="article">
-  <h1>titulo</h1>
-  <p>conteudo</p>
+  <h1>título</h1>
+  <p>conteúdo</p>
 </div>
 ```
 
-Sempre que possivel use a tag relativa assim a marção fica menos redundante.
+Sempre que possível use a tag relativa assim a marção fica menos redundante.
 
 ## Navegação pela página
 
-Todas as interações com WAI-ARIA deve ser usadas via teclado.
+Todas as interações com WAI-ARIA devem ser usadas via teclado.
 
-Se você cria um formulario o usuário deve ter a possibilidade de preencher esse formulario sem usar o mouse apenas via teclado.
+Se você cria um formulário o usuário deve ter a possibilidade de preencher esse formulário sem usar o mouse apenas via teclado.
 
 ## Resumo
 
-Neste artigo aprendemos a importacia da acessibilidade, porque devemos criar sites acessiveis, o que é WAI-ARIA e como criar sites acessiveis.
+Neste artigo aprendemos a importância da acessibilidade, porque devemos criar sites acessiveis, o que é WAI-ARIA e como criar sites acessiveis.
 
 ## Para saber mais
 
