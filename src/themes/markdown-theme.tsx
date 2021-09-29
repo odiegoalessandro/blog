@@ -116,6 +116,7 @@ const theme: any = {
         language={language}
         style={style}
         children={children}
+        showLineNumbers={true}
       />
     )
   }
