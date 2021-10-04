@@ -6,11 +6,18 @@ import { getLatestProjects } from '../utils/projects'
 import TechStacks from "../components/TechStacks"
 import Welcome from "../components/Welcome"
 import PageDown from "../components/PageDown"
-import Projects from "../components/Projects"
 import { motion, Variants } from 'framer-motion'
 import PostType from "../types/PostType"
-import Posts from "../components/Posts"
 import { getLatestPosts } from "../utils/posts"
+import dynamic from "next/dynamic"
+
+const Projects = dynamic(() => import('../components/Projects'), {
+  ssr: false, 
+})
+
+const Posts = dynamic(() => import('../components/Posts'), {
+  ssr: false
+})
 
 const variants: Variants = {
   hidden: {
