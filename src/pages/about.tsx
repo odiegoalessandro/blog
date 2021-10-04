@@ -22,9 +22,8 @@ const variants: Variants = {
     y: 0,
     opacity: 1,
     transition: {
-      delay: 0.2,
-      duration: .5,
-      staggerChildren: .4
+      duration: .2,
+      staggerChildren: .1
     }
   }
 }

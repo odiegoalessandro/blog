@@ -6,7 +6,6 @@ import { getLatestProjects } from '../utils/projects'
 import TechStacks from "../components/TechStacks"
 import Welcome from "../components/Welcome"
 import PageDown from "../components/PageDown"
-import { motion, Variants } from 'framer-motion'
 import PostType from "../types/PostType"
 import { getLatestPosts } from "../utils/posts"
 import dynamic from "next/dynamic"
@@ -18,27 +17,6 @@ const Projects = dynamic(() => import('../components/Projects'), {
 const Posts = dynamic(() => import('../components/Posts'), {
   ssr: false
 })
-
-const variants: Variants = {
-  hidden: {
-    y: "50px",
-    opacity: 0
-  },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      delay: 0.2,
-      duration: .7,
-      staggerChildren: .4
-    }
-  }
-}
-
-const elementVariants: Variants = {
-  hidden: {opacity: 0},
-  visible: {opacity: 1}
-}
 
 interface HomeProps {
   projects: PostType[]
@@ -61,23 +39,11 @@ const Home: React.FC<HomeProps> = ({ projects, posts }) => {
         }}
       >
         <Box>
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={variants}
-          >
-            <motion.div variants={elementVariants}>
-              <Welcome />
-            </motion.div>
-            <motion.div variants={elementVariants}>
-              <TechStacks />
-            </motion.div>
-            <motion.div variants={elementVariants}>
-              <PageDown />
-            </motion.div>
-            <Projects projects={projects} />
-            <Posts posts={posts} />
-          </motion.div>
+          <Welcome />
+          <TechStacks />
+          <PageDown />
+          <Projects projects={projects} />
+          <Posts posts={posts} />
         </Box>
       </Center>
     </>
