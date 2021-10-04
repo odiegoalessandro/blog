@@ -3,7 +3,8 @@ import Link from 'next/link'
 import Card from '../components/Card'
 import { motion, Variants } from 'framer-motion'
 import PostType from "../types/PostType"
-import React from "react"
+import React, { useState } from "react"
+import Posts from "./Posts"
 
 const variants: Variants = {
   hidden: {
@@ -24,9 +25,29 @@ interface ProjectsProps {
   projects: PostType[]
 }
 
-const Projects: React.FC<ProjectsProps> = ({ projects }) => {
-  return(
+const Projects: React.FC<ProjectsProps> = ({ projects = [] }) => {
+  const [listJsx, updateList] = useState([])
 
+  const showProjects = () => {
+    const liJsx = []
+
+    projects.map((card, index) => {
+      liJsx.push(
+        <Card 
+          content={card}
+          key={index}
+          type="project"
+        />
+      )
+    })
+
+    updateList(liJsx)
+  }
+  if(listJsx.length === 0 && projects.length){
+    showProjects()
+  }
+
+  return(
     <Box>
       <motion.div
         initial="hidden"
@@ -65,17 +86,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
             xl: "nowrap"
           }}
         >
-          {
-            projects.map((card, index) => {
-              return (
-                <Card 
-                  content={card}
-                  key={index}
-                  type="project"
-                />
-              )
-            })
-          }
+          {listJsx}
         </HStack>
         <Center marginTop="1rem">
           <Link href="/projects">

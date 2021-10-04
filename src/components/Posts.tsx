@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Card from '../components/Card'
 import PostType from "../types/PostType"
 import { motion, Variants } from 'framer-motion'
-import React from "react"
+import { useState } from "react"
 
 interface PostsProps {
   posts: PostType[]
@@ -25,6 +25,26 @@ const variants: Variants = {
 }
 
 const Posts: React.FC<PostsProps> = ({ posts }) => {
+ const [listJsx, updateList] = useState([])
+
+  const showPosts = () => {
+    const liJsx = []
+
+    posts.map((post, index) => liJsx.push(
+        <Card 
+          content={post}
+          key={index}
+          type="post"
+        />
+    ))
+
+    updateList(liJsx)
+  }
+
+  if(listJsx.length === 0 && posts.length){
+    showPosts()
+  }
+
   return(
     <Box>
       <motion.div
@@ -44,15 +64,7 @@ const Posts: React.FC<PostsProps> = ({ posts }) => {
           Ultimas postagens
         </Heading>
         <VStack marginTop="2rem">
-          {
-            posts.map((post, index) => (
-              <Card 
-                content={post}
-                key={index}
-                type="post"
-              />
-            ))
-          }
+          {listJsx}
         </VStack>
         <Center marginTop="1rem">
           <Link href="/posts">
