@@ -1,4 +1,5 @@
-import { Heading, Text, Link as LinkStyle, Image } from '@chakra-ui/react'
+import { Heading, Text, Link as LinkStyle } from '@chakra-ui/react'
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import useInView from 'react-cool-inview'
@@ -55,7 +56,13 @@ const Card: React.FC<CardProps> = ({ content, type }, rest) => {
                       {content.excerpt}
                     </Text>
                   </div>
-                  <Image width="366px" objectFit="contain" height="200px" src={`./${content.image}`} alt={content.title}  />
+                  <Image
+                    width={366}
+                    height={200} 
+                    objectFit="contain"
+                    src={`/${content.image}`}
+                    alt={content.title}  
+                  />
                   <Text
                     _hover={{
                       color: "#ff0080"
