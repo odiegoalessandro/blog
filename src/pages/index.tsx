@@ -3,13 +3,16 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import React from 'react'
 import { getLatestProjects } from '../utils/projects'
-import TechStacks from "../components/TechStacks"
 import Welcome from "../components/Welcome"
 import PageDown from "../components/PageDown"
 import { motion, Variants } from 'framer-motion'
 import PostType from "../types/PostType"
 import { getLatestPosts } from "../utils/posts"
 import dynamic from "next/dynamic"
+
+const TechStacks = dynamic(() => import('../components/TechStacks'), {
+  ssr: false
+})
 
 const Projects = dynamic(() => import('../components/Projects'), {
   ssr: false, 
