@@ -55,7 +55,7 @@ const Card: React.FC<CardProps> = ({ content, type }, rest) => {
                       {content.excerpt}
                     </Text>
                   </div>
-                  <Image width="auto" height="auto" src={`./${content.image}`} alt={content.title}  />
+                  <Image width="100%" height="max" src={`./${content.image}`} alt={content.title}  />
                   <Text
                     _hover={{
                       color: "#ff0080"
