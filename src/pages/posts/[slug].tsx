@@ -2,11 +2,12 @@ import { getAllSlugs, getPostBySlug } from "../../utils/posts"
 import { GetStaticPaths, GetStaticProps } from "next"
 import { Flex, Center, Heading, HStack, Text, Image, Button, Avatar, Input } from "@chakra-ui/react"
 import Head from 'next/head'
-import React from "react"
+import React, { FormEvent, useEffect, useState } from "react"
 import Markdown from "../../components/Markdown"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGoogle } from "@fortawesome/free-brands-svg-icons"
 import useAuth from "../../hook/useAuth"
+import { database } from "../../services/firebase"
 
 interface SlugProps {
   data: {
@@ -20,9 +21,25 @@ interface SlugProps {
     }
     content: string
   }
+  slug: string
 }
 
-const Slug: React.FC<SlugProps> = ({ data }) => {
+interface FirebaseComments {
+  content: string
+  authorId: string
+}
+
+interface Comments {
+  id: string
+  author: {
+    name: string
+    avatar: string
+  }
+  content: string
+
+}
+
+const Slug: React.FC<SlugProps> = ({ data, slug }) => {
   const { signInWithGoogle, user } = useAuth()
   const months = [
     "Jan",
@@ -41,8 +58,51 @@ const Slug: React.FC<SlugProps> = ({ data }) => {
 
   const date = new Date(data.metadata.date)
   const postingDate = `${date.getDate()} ${months[date.getMonth()]}, ${date.getFullYear()}`
+  const [newComment, setNewComment] = useState('')
+  const [comments, setComments] = useState<Comments[]>()
 
-  console.log(user)
+  async function handleSendComment(event: FormEvent){
+    event.preventDefault()
+
+    if(newComment.trim() === ""){
+      return
+    }
+
+    const commentsRef = database.ref(`${slug}/comments`)
+
+    commentsRef.push({
+      author: {
+        avatar: user?.avatar,
+        name: user?.name,
+      },
+      content: newComment
+    })
+
+    setNewComment("")
+  }
+
+  useEffect(() => {
+    const commentsRef = database.ref(`${slug}/comments`)
+
+    commentsRef.on("value", result => {
+      const comments = result.val()
+      const firebaseComments: FirebaseComments = comments ?? {}
+      const parsedComments = Object.entries(firebaseComments).map(([key, value]) => {
+        return {
+          id: key,
+          content: value.content,
+          author: value.author
+        }
+      })
+
+      setComments(parsedComments)
+    })
+
+    return () => commentsRef.off()
+  }, [slug, user?.id])
+
+  console.log(comments)
+
   return (
     <>
       <Head>
@@ -106,12 +166,20 @@ const Slug: React.FC<SlugProps> = ({ data }) => {
             </Heading>
             {
               user ? (
-                <HStack marginTop="1rem">
+                <HStack
+                  marginTop="1rem"
+                  as="form"
+                  onSubmit={handleSendComment}
+                >
                   <Avatar src={user.avatar} borderRadius="8px" w="40px" h="40px" />
-                  <Input placeholder="Iniciar discussão..." />
+                  <Input 
+                    placeholder="Iniciar discussão..."
+                    onChange={event => setNewComment(event.target.value)}
+                    value={newComment}
+                  />
                 </HStack>
               ) : (
-                <>    
+                <Center>
                   <Button 
                     marginTop="1rem"
                     maxW="350px"
@@ -143,7 +211,7 @@ const Slug: React.FC<SlugProps> = ({ data }) => {
                     <FontAwesomeIcon size="lg" icon={faGoogle} />
                     Faça login para comentar
                   </Button>
-                </>
+                </Center>
               )
             }
           </Flex>
@@ -160,7 +228,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   return {
     props: {
-      data
+      data,
+      slug: context.params.slug
     }
   }
 } 
