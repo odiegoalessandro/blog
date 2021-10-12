@@ -2,7 +2,7 @@ import { getAllSlugs, getPostBySlug } from "../../utils/posts"
 import { GetStaticPaths, GetStaticProps } from "next"
 import { Flex, Center, Heading, HStack, Text, Image, Button, Avatar, Input, VStack } from "@chakra-ui/react"
 import Head from 'next/head'
-import React, { FormEvent, useMemo, useState } from "react"
+import React, { FormEvent, useState } from "react"
 import Markdown from "../../components/Markdown"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGoogle } from "@fortawesome/free-brands-svg-icons"
@@ -162,6 +162,7 @@ const Slug: React.FC<SlugProps> = ({ data, slug }) => {
                       base: "13px"
                     }}
                     justifyContent="space-between"
+                    boxSizing="border-box"
                     p={{
                       xl: "0 3rem",
                       lg: "0 3rem",
@@ -177,7 +178,7 @@ const Slug: React.FC<SlugProps> = ({ data, slug }) => {
                     color="#fff"
                     onClick={signInWithGoogle}
                   >
-                    <FontAwesomeIcon size="lg" icon={faGoogle} />
+                    <FontAwesomeIcon size="lg" icon={faGoogle} style={{marginRight: "16px"}} />
                     Faça login para comentar
                   </Button>
                 </Center>
