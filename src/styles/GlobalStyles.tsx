@@ -33,6 +33,13 @@ const GlobalStyles: React.FC = ({ children }) => {
         ::-webkit-scrollbar-thumb:hover {
           background: #ffffff30;
         }
+        ::-webkit-scrollbar:vertical {
+          display: none;
+        }
+        ::-webkit-scrollbar:horizontal {
+          height: 10px;
+          
+        }
       `}/>
       {children}
     </>
