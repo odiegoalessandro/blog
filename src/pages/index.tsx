@@ -1,4 +1,4 @@
-import { Container, Box, Heading, useColorModeValue, List, Link, ListItem, Button, Icon } from "@chakra-ui/react"
+import { Container, Box, Heading, useColorModeValue, List, Link, ListItem, Button, Icon, SimpleGrid } from "@chakra-ui/react"
 import NextLink from "next/link"
 import React from "react"
 import Article from "../components/article"
@@ -7,6 +7,7 @@ import Section from "../components/section"
 import { IoLogoGithub, IoLogoTwitter, IoLogoLinkedin, IoChevronForward } from "react-icons/io5"
 import { getLatestPosts } from "../lib/posts"
 import { GetStaticProps } from "next"
+import Card from "../components/card"
 
 interface latestPosts {
   excerpt: string
@@ -123,6 +124,22 @@ export default function Home({ latestPosts }: HomeProps) {
           <Heading as="h3" variant="section-title">
             Últimas postagens
           </Heading>
+          <SimpleGrid columns={[1, 2, 2]} gap={6} mt={8}>
+            {
+              latestPosts.map((post, index) => (
+                <Section delay={Number(`0.${index}`)}>
+                  <Card 
+                    slug={`/posts/${post.slug}`}
+                    thumbnail={`/images/posts/${post.image}`}
+                    title={post.title}
+                    key={post.slug}
+                  >
+                    {post.excerpt}
+                  </Card>
+                </Section>
+              ))
+            }
+          </SimpleGrid>
           <Box align="center" mb={4}>
             <NextLink href="/posts">
               <Button 

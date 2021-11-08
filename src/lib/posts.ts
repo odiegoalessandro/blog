@@ -35,7 +35,8 @@ export function  getAllPosts(){
       excerpt: data.excerpt,
       slug,
       duration: data.duration,
-      date: data.date
+      date: data.date,
+      image: data.image
     }
   })
 

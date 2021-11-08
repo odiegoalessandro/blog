@@ -40,6 +40,9 @@ const GlobalStyles: React.FC = ({ children }) => {
           height: 10px;
           
         }
+        .grid-item-thumbnail {
+          border-radius: 12px;
+        }
       `}/>
       {children}
     </>
