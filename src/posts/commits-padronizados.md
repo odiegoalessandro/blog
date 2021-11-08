@@ -82,7 +82,7 @@ você ja tem o conteudo do changelog agora basta criar um arquivo README.md e es
 
 Exemplo:
 
-![exemplo de changelog](/changelog-example.png)
+![exemplo de changelog](/images/posts/changelog-example.png)
 
 Aqui está o relatório que é gerado apenas usando nosso commit, também podemos especificar quais categorias queremos incluir.
 

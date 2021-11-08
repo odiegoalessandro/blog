@@ -5,8 +5,20 @@ import Article from "../components/article"
 import Paragraph from "../components/paragraph"
 import Section from "../components/section"
 import { IoLogoGithub, IoLogoTwitter, IoLogoLinkedin, IoChevronForward } from "react-icons/io5"
+import { getLatestPosts } from "../lib/posts"
+import { GetStaticProps } from "next"
 
-export default function Home() {
+interface latestPosts {
+  excerpt: string
+  image: string
+  slug: string
+  title: string
+}
+interface HomeProps {
+  latestPosts: latestPosts[]
+}
+
+export default function Home({ latestPosts }: HomeProps) {
   return (
     <Article title="">
       <Container>
@@ -131,4 +143,14 @@ export default function Home() {
       </Container>
     </Article>
   )
+}
+
+export const getStaticProps: GetStaticProps = () => {
+  const latestPosts = getLatestPosts()
+ 
+  return {
+    props: {
+      latestPosts
+    }
+  }
 }
