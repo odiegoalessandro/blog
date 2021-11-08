@@ -40,7 +40,7 @@ const Slug = ({ data }: SlugProps) => {
 
   return (
     <Article title={data.metadata.title}>
-      <Container mt={10} px={{base: "1rem"}} overflow="hidden">
+      <Container mt={10} px={{base: "1rem", sm: "0"}} overflow="hidden">
         <Section delay={0.1}>
           <Heading as="h2" size="xl">
             {data.metadata.title}
