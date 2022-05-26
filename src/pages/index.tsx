@@ -1,9 +1,12 @@
 import { Box, Container, Flex, Heading, Text } from "@chakra-ui/react"
 import NextLink from "next/link"
+import Layout from "../components/layout"
 import { Link } from "../components/link"
 
 export default function Home() {
   return (
+    <Layout title="home">
+
     <Flex flexDir="column" minH="100vh">
       <Box mt="auto" mb="auto">
         <Heading size="lg" as="h1">
@@ -23,5 +26,6 @@ export default function Home() {
         </Text>
       </Box>
     </Flex>
+    </Layout>
   )
 }

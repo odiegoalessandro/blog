@@ -6,17 +6,18 @@ function NavBar() {
     <Box
       as="nav"
       w="full"
-      h="2.5rem"
+      h="3.5rem"
       pos="fixed"
       top="0"
       left="0"
       right="0"
       css={{ backdropFilter: "blur(10px)" }}
+      zIndex="10"
     >
       <Container
         display="flex"
         maxW="container.md"
-        h="2.5rem"
+        h="full"
         alignItems="center"
       >
         <NextLink href="/" passHref>
