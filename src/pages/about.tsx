@@ -1,19 +1,22 @@
 import { Heading, ListItem, Text, UnorderedList } from "@chakra-ui/react"
-import Layout from "../components/layout"
 import NextImage from "next/image"
-import styled from "@emotion/styled"
-
-const Image = styled(NextImage)`
-  border-radius: 15px;
-  filter: grayscale(100%);
-  width: 100%;
-
-`
+import Layout from "../components/layout"
 
 export default function About() {
   return (
     <Layout title="about">
-      <Image width="1000px" height="400px" src="/plants.jpg" alt="plants" objectFit="cover" />
+      <NextImage
+        width="1000px"
+        height="400px"
+        src="/plants.jpg"
+        alt="plants"
+        objectFit="cover"
+        style={{
+          borderRadius: "15px",
+          filter: "grayscale(100%)",
+        }}
+      />
+
       <Heading as="h1" mt="2rem" size="md">
         Sobre mim
       </Heading>
