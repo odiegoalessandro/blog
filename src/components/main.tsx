@@ -8,7 +8,7 @@ interface MainProps {
 
 function Main({ children }: MainProps){
   return (
-    <Box as="main" mt="4rem">
+    <Box as="main">
       <Head>
         <meta name="description" content="Coloque uma descrição" />
         <meta name="author" content="Coloque seu nome" />

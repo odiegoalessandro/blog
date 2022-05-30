@@ -8,7 +8,7 @@ export default function About() {
       <NextImage
         width="1000px"
         height="400px"
-        src="/plants.jpg"
+        src="photo-1446071103084-c257b5f70672?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=684&q=80"
         alt="plants"
         objectFit="cover"
         style={{

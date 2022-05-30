@@ -25,8 +25,7 @@ const variants: Variants = {
   },
 }
 
-export default function Layout({ children, title }: LayoutProps){
-  
+export default function Layout({ children, title }: LayoutProps) {
   return (
     <motion.div
       initial="hidden"
@@ -38,7 +37,7 @@ export default function Layout({ children, title }: LayoutProps){
         type: "easeInOut",
         delay: 0.2,
       }}
-      style={{ position: "relative" }}
+      style={{ position: "relative", marginTop: "4rem" }}
     >
       {title && (
         <Head>
