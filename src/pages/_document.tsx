@@ -15,6 +15,10 @@ class MyDocument extends Document {
         <Html lang="pt-BR">
           <Head>
             <link rel="icon" type="image/png" href="image_url" />
+            <link
+              rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github-dark.min.css"
+            />
           </Head>
           <body>
             <ColorModeScript initialColorMode={theme.config.initialColorMode} />
