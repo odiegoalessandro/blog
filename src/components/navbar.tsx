@@ -21,7 +21,7 @@ function NavBar() {
         alignItems="center"
       >
         <NextLink href="/" passHref>
-          <Heading cursor="pointer" size="sm">
+          <Heading cursor="pointer" size="sm" lineHeight="1rem">
             odiegoalessandro
           </Heading>
         </NextLink>
