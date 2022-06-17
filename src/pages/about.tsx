@@ -16,6 +16,7 @@ export default function About() {
             borderRadius: "15px",
             filter: "grayscale(100%)"
           }}
+          loading="eager"
         />
 
         <Heading as="h1" mt="2rem" size="md">

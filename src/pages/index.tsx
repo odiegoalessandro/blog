@@ -2,8 +2,10 @@ import { Box, Container, Flex, Heading, Text } from "@chakra-ui/react"
 import NextLink from "next/link"
 import Layout from "../components/layout"
 import { Link } from "../components/link"
+import { getAllPosts } from "../lib/mdx"
 
 export default function Home() {
+
   return (
     <Layout title="home">
       <Flex flexDir="column" minH="100vh">

@@ -12,24 +12,22 @@ import GlobalStyles from "../styles/GlobalStyles"
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <MDXProvider components={MDXComponents}>
-        <Fonts />
-        <AnimatePresence
-          exitBeforeEnter
-          initial={true}
-          onExitComplete={() => {
-            if (typeof window !== "undefined") {
-              window.scrollTo({ top: 0 })
-            }
-          }}
-        >
-          <NavBar />
-          <Main>
-            <GlobalStyles />
-            <Component {...pageProps} key={router.route} />
-          </Main>
-        </AnimatePresence>
-      </MDXProvider>
+      <Fonts />
+      <AnimatePresence
+        exitBeforeEnter
+        initial={true}
+        onExitComplete={() => {
+          if (typeof window !== "undefined") {
+            window.scrollTo({ top: 0 })
+          }
+        }}
+      >
+        <NavBar />
+        <Main>
+          <GlobalStyles />
+          <Component {...pageProps} key={router.route} />
+        </Main>
+      </AnimatePresence>
     </ChakraProvider>
   )
 }
